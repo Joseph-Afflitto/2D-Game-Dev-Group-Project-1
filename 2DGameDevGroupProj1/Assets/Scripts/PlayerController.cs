@@ -7,13 +7,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody;
 
     // Start is called before the first frame update
-   private void Start()
+    private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-   private void Update()
+    private void Update()
     {
         var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
@@ -22,9 +22,5 @@ public class PlayerController : MonoBehaviour
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
-
-
-
-
     }
 }
