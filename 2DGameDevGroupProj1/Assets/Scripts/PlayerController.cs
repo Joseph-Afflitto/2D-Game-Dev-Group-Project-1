@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollision2DEnter(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
