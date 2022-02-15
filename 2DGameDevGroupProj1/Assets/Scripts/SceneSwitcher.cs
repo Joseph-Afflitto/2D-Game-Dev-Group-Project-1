@@ -15,4 +15,9 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void Restart()
+    {
+        SceneManager.LoadScene("GameLevel");
+        Time.timeScale = 1f;
+    }
 }

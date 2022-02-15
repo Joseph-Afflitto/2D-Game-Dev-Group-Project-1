@@ -5,6 +5,8 @@ public class PlayerController : MonoBehaviour
     public float MovementSpeed = 5;
     public float JumpForce = 5;
     private Rigidbody2D _rigidbody;
+    public bool gameOver;
+    public GameObject GameOverMenu;
 
     // Start is called before the first frame update
     private void Start()
@@ -21,6 +23,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Player touched monster. GAME OVER.");
+            gameOver = true;
+            GameOverMenu.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 }
