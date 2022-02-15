@@ -8,7 +8,7 @@ public class SceneSwitcher : MonoBehaviour
     // Start is called before the first frame update
     public void StartGame()
     {
-        SceneManager.LoadScene("Test Scene");
+        SceneManager.LoadScene("GameLevel");
     }
 
     public void BackToMainMenu()
