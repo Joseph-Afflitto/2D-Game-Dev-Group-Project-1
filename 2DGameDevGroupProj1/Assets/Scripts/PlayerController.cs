@@ -7,20 +7,39 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public bool gameOver;
     public GameObject GameOverMenu;
+    private Animator PlayerAnim;
+    public float horizontalInput;
+    public bool isOnGround = true;
 
     // Start is called before the first frame update
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        PlayerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-            var movement = Input.GetAxis("Horizontal");
-            transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector2.right * horizontalInput * Time.deltaTime * MovementSpeed);
+        PlayerAnim.SetFloat("Moving", Mathf.Abs(horizontalInput));
+        if (horizontalInput > 0)
+        {
+            transform.localScale = new Vector3((float)0.2, (float)0.2, (float)0.2);
+        }
+        else if (horizontalInput < 0)
+        {
+            transform.localScale = new Vector3((float)-0.2, (float)0.2, (float)0.2);
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        {
+            _rigidbody.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
+            isOnGround = false;
+            PlayerAnim.SetBool("Grounded", false);
+        }
 
-            if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
             {
                 _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             }
@@ -34,6 +53,11 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
             GameOverMenu.SetActive(true);
             Time.timeScale = 0f;
+        }
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isOnGround = true;
         }
     }
 }
