@@ -15,6 +15,10 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void WinGame()
+    {
+        SceneManager.LoadScene("WinScreen");
+    }
     public void Restart()
     {
         SceneManager.LoadScene("GameLevel");

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -50,13 +51,18 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Player touched monster. GAME OVER.");
             gameOver = true;
-            GameOverMenu.SetActive(true);
+            SceneManager.LoadScene("GameOver");
             Time.timeScale = 0f;
         }
 
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+        }
+
+        if (collision.gameObject.CompareTag("Win"))
+        {
+            SceneManager.LoadScene("WinScreen");
         }
     }
 }
