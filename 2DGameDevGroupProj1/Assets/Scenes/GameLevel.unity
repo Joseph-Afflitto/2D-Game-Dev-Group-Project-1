@@ -226,7 +226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162584208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.36, y: 1.11, z: 0}
+  m_LocalPosition: {x: -23.36, y: 1.35, z: 0}
   m_LocalScale: {x: 5.0007854, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1460,7 +1460,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950401311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.95, y: 2.73, z: 0}
+  m_LocalPosition: {x: -15.95, y: 3.05, z: 0}
   m_LocalScale: {x: 5.0007854, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1564,7 +1564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e8bd87e667cfa4d967cfc4d2b88797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6
   stoppingDistance: 0
 --- !u!50 &1135279814
 Rigidbody2D:
@@ -2029,6 +2029,10 @@ PrefabInstance:
       propertyPath: GameOverMenu
       value: 
       objectReference: {fileID: 2013169234}
+    - target: {fileID: 7053343402673055163, guid: ee2f172e8fdb70746989d0a10f4c572e, type: 3}
+      propertyPath: MovementSpeed
+      value: 5.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7053343402673055164, guid: ee2f172e8fdb70746989d0a10f4c572e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2623,6 +2627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2046111523}
   - component: {fileID: 2046111522}
+  - component: {fileID: 2046111524}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -2695,3 +2700,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2046111524
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046111521}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
