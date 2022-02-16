@@ -52,7 +52,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Player touched monster. GAME OVER.");
             gameOver = true;
             SceneManager.LoadScene("GameOver");
-            Time.timeScale = 0f;
         }
 
         if (collision.gameObject.CompareTag("Ground"))
