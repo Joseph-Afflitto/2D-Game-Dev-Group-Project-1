@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SwitchOpensDoor : MonoBehaviour
 {
-    [SerializeField]
+    public AudioSource door2;
+	[SerializeField]
     GameObject door;
 
     bool isOpened = false;
@@ -15,6 +16,7 @@ public class SwitchOpensDoor : MonoBehaviour
         {
             isOpened = true;
             door.transform.position += new Vector3(0, 4, 0);
+			door2.Play();
         }
     }
 }
