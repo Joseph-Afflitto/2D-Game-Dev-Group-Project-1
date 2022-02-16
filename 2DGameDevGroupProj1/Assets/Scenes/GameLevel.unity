@@ -904,7 +904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b81a12722982734e8c4aed0d9ae0745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 1709312262}
 --- !u!4 &542726089
 Transform:
   m_ObjectHideFlags: 0
@@ -2071,16 +2070,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7053343402673055166, guid: ee2f172e8fdb70746989d0a10f4c572e, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7053343402673055166, guid: ee2f172e8fdb70746989d0a10f4c572e, type: 3}
       propertyPath: m_Simulated
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7053343402673055166, guid: ee2f172e8fdb70746989d0a10f4c572e, type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7053343402673055166, guid: ee2f172e8fdb70746989d0a10f4c572e, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7053343402673055167, guid: ee2f172e8fdb70746989d0a10f4c572e, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee2f172e8fdb70746989d0a10f4c572e, type: 3}
