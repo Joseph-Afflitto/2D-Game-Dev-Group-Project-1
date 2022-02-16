@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
         {
             _rigidbody.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
             isOnGround = false;
-            PlayerAnim.SetBool("Grounded", false);
         }
 
         if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
