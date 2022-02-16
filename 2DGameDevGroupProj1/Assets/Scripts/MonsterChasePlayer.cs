@@ -8,13 +8,14 @@ public class MonsterChasePlayer : MonoBehaviour
     public float stoppingDistance;
     private Animator MonsterAnim;
     private Transform target;
+    public bool facingRight; 
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); 
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -25,4 +26,11 @@ public class MonsterChasePlayer : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
     }
+
+    void flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
+    }
+
 }
