@@ -6,7 +6,7 @@ public class MonsterChasePlayer : MonoBehaviour
 {
     public float speed;
     public float stoppingDistance;
-
+    private Animator MonsterAnim;
     private Transform target;
 
 
